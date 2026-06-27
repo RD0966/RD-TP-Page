@@ -1,0 +1,270 @@
+/* --- INITIAL GLOBAL PAGE RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000; /* Rich pure black fallback frame area */
+    color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;    /* Centers normal mobile canvas mode frames vertically */
+    justify-content: center; /* Centers normal mobile canvas mode frames horizontally */
+    overflow: hidden; /* Completely eliminates viewport tracking slide issues */
+}
+
+/* --- THE RUNTIME SCREEN CANVAS CONTAINER --- */
+.landing-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: none; /* REMOVES THE ARROW: Hides default browser system arrows completely! */
+    
+    /* Coordinate configuration mappings for script management updates */
+    --mask-x: 50%;
+    --mask-y: 50%;
+    --mask-scale: 0; /* Keeps background canvas hidden until user initiates interactions */
+}
+
+/* --- APP PHOTO RENDER COATINGS LAYER STACK --- */
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* EDIT IMAGE PATHS DOWN HERE: Change URLs inside parentheses to update your graphics links */
+
+/* LAYOUT REGISTER STATE ONE: Initial execution appearance */
+.state-one .base-layer {
+    background-image: url('https://i.pinimg.com/736x/19/d2/40/19d240f66e85c2f870f59dabc61f6413.jpg');
+}
+.state-one .spotlight-layer {
+    background-image: url('https://i.pinimg.com/736x/e5/00/9f/e5009fb73c81b51373a5c00202938635.jpg');
+    filter: url('#liquid-glue'); /* Connects to the SVG fluid processor markup */
+    clip-path: circle(calc(160px * var(--mask-scale)) at var(--mask-x) var(--mask-y));
+    transition: clip-path 0.08s linear; /* Smooth responsive track lagging styling */
+}
+
+/* LAYOUT REGISTER STATE TWO: Inverted interface transformation phase */
+.state-two .base-layer {
+    background-image: url('https://i.pinimg.com/736x/e5/00/9f/e5009fb73c81b51373a5c00202938635.jpg');
+}
+.state-two .spotlight-layer {
+    background-image: url('https://i.pinimg.com/736x/19/d2/40/19d240f66e85c2f870f59dabc61f6413.jpg');
+    filter: url('#liquid-glue');
+    clip-path: circle(calc(160px * var(--mask-scale)) at var(--mask-x) var(--mask-y));
+    transition: clip-path 0.08s linear;
+}
+
+/* --- BACKGROUND DESIGN MARKER WORDING --- */
+.bg-watermark {
+    position: absolute;
+    left: 5%;
+    bottom: 12%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.25); /* Faint layout visual watermark */
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- MODIFIER SETTINGS FOR 'VIEW NORMALLY' SMARTPHONE VIEWPORT SETUPS --- */
+.landing-container.mobile-normal-mode {
+    width: 100vw;
+    height: 42vh; /* Locks layout to a clean horizontal letterbox panel centered vertically */
+    border-radius: 0px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+/* --- MASTER BRANDING TOP HEADERS --- */
+.top-header {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5;
+}
+
+.main-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 6px;
+}
+
+.sub-title {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: #cccccc;
+}
+
+/* --- CHARACTER DATA ELEMENT (ONLY THING THAT BLURS BACKGROUND) --- */
+.content-card {
+    position: absolute;
+    bottom: 12%;
+    right: 5%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 12px;
+    z-index: 5;
+    
+    /* Removed background-colors: Complete transparency allows full wallpaper imagery view */
+    background: rgba(255, 255, 255, 0.01); 
+    
+    /* Restricts blur effects selectively inside card borders */
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.faction-tag {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8ade8a; /* Pitch green highlights accent color */
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.character-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.character-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* --- LINK BUTTON LAYOUT RULES --- */
+.cta-button {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #8ade8a;
+    color: #000000;
+}
+
+/* --- HANDLER DIALOG BOX LAYERS FOR SMARTPHONE LAYOUT SYSTEMS --- */
+.popup-overlay, .warning-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 14, 0.98);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warning-overlay {
+    display: none;
+    background: #000000;
+}
+
+.popup-box, .warning-box {
+    background: #111116;
+    padding: 35px;
+    border-radius: 16px;
+    text-align: center;
+    width: 85%;
+    max-width: 380px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popup-box h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    font-size: 0.9rem;
+    color: #888899;
+    margin-bottom: 25px;
+}
+
+.popup-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-btn.standard {
+    background: #22222b;
+    color: white;
+}
+
+.popup-btn.thrill {
+    background: #ffffff;
+    color: black;
+}
+
+.phone-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: rotateFrame 2s infinite ease-in-out;
+}
+
+@keyframes rotateFrame {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-90deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* --- TARGETED PHONE MEDIA DESIGN RULES --- */
+@media (max-width: 768px) {
+    .bg-watermark {
+        font-size: 4rem;
+        bottom: 45%;
+    }
+    .landing-container:not(.mobile-normal-mode) .content-card {
+        max-width: 90%;
+        right: 5%;
+        bottom: 5%;
+    }
+}
+
+/* Bypasses choice prompts automatically on large desktop system displays */
+@media (min-width: 1024px) {
+    .popup-overlay {
+        display: none !important;
+    }
+}

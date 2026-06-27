@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukoon - Last Dance</title>
+    
+    <link rel="stylesheet" href="TP.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="drums-audio" src="Images & Audio/meeeeesi.mp3" preload="auto"></audio>
+
+    <div id="mobile-popup" class="popup-overlay">
+        <div class="popup-box">
+            <h3>Choose Your Experience</h3>
+            <p>How would you like to view the Last Dance layout?</p>
+            <button class="popup-btn standard" onclick="chooseMode('normal')">View Normally</button>
+            <button class="popup-btn thrill" onclick="chooseMode('thrill')">Experience Thrill</button>
+        </div>
+    </div>
+
+    <div id="rotate-warning" class="warning-overlay">
+        <div class="warning-box">
+            <div class="phone-icon">🔄</div>
+            <p>Please rotate your device horizontally to experience the thrill!</p>
+        </div>
+    </div>
+
+    <div id="main-canvas" class="landing-container state-one" onclick="toggleTransformation()">
+        
+        <div class="bg-layer base-layer"></div>
+        
+        <div id="masked-layer" class="bg-layer spotlight-layer"></div>
+        
+        <div class="bg-watermark">
+            <br><br>RD...
+        </div>
+        
+        <div class="top-header">
+            <h1 class="main-title">SUKOON...</h1>
+            <div class="sub-title">LAST DANCE...</div>
+        </div>
+
+        <div class="content-card" onclick="event.stopPropagation();">
+            <span class="faction-tag">The Little Boy From Rosario Santa Fe...</span>
+            <h2 class="character-name">LIONEL ANDRES<br>MESSI...</h2>
+            <p class="character-desc">
+                The boy who would be King of Football. A magical left foot, and a legacy that never dies — chasing the world's ultimate glory.
+            </p>
+            <a href="#" class="cta-button">GET SIMPLICITY...</a>
+        </div>
+
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+        <defs>
+            <filter id="liquid-glue">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+    <script src="TP.js"></script>
+</body>
+</html>
