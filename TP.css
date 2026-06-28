@@ -1,146 +1,190 @@
-/* --- INITIAL GLOBAL PAGE RESETS --- */
+/* --- UNIVERSAL TARGET DECORATION & RESETS --- */
 * {
+    /* Wipes standard default browser exterior spacing gaps from all generated block elements */
     margin: 0;
+    /* Wipes standard default browser interior spacing buffers from all generated block elements */
     padding: 0;
+    /* Ensures height and width dimensions include internal pads and borders to prevent scaling issues */
     box-sizing: border-box;
 }
 
 body {
+    /* Sets the clean typography font style across the global site layout tree structure */
     font-family: 'Poppins', sans-serif;
-    background-color: #000000; /* Rich pure black fallback frame area */
+    /* Rich fallback black tone background shade if external image paths fail to load */
+    background-color: #000000;
+    /* Default typography color shade tracking code values applied directly to baseline text logs */
     color: #ffffff;
+    /* Mandates body layout expands exactly to 100% of physical device viewport heights */
     height: 100vh;
+    /* Mandates body layout expands exactly to 100% of physical device viewport widths */
     width: 100vw;
+    /* Deploys dynamic flexbox formatting rules to center components automatically */
     display: flex;
-    align-items: center;    /* Centers normal mobile canvas mode frames vertically */
-    justify-content: center; /* Centers normal mobile canvas mode frames horizontally */
-    overflow: hidden; /* Completely eliminates viewport tracking slide issues */
+    /* Aligns child layout containers straight down the true vertical center guidelines axis */
+    align-items: center;
+    /* Aligns child layout containers straight across the true horizontal center guidelines axis */
+    justify-content: center;
+    /* Disables scrollbars to prevent viewport shifting on mobile swipe actions */
+    overflow: hidden;
 }
 
-/* --- THE RUNTIME SCREEN CANVAS CONTAINER --- */
+/* --- THE RUNTIME VIEWPORT COMPONENT WRAPPER --- */
 .landing-container {
+    /* Establishes absolute positioning context limits for inner stacked elements layers */
     position: relative;
+    /* Expands to occupy total horizontal width capabilities */
     width: 100%;
+    /* Expands to occupy total vertical height capabilities */
     height: 100%;
-    cursor: none; /* REMOVES THE ARROW: Hides default browser system arrows completely! */
-    
-    /* Coordinate configuration mappings for script management updates */
-    --mask-x: 50%;
-    --mask-y: 50%;
-    --mask-scale: 0; /* Keeps background canvas hidden until user initiates interactions */
+    /* REMOVES THE ARROW: Turns off standard system mouse pointer arrows completely on desktop displays */
+    cursor: none;
 }
 
-/* --- APP PHOTO RENDER COATINGS LAYER STACK --- */
+/* --- CORE WALLPAPER CANVAS BACKGROUND LAYERS --- */
 .bg-layer {
+    /* Pushes and anchors layer directly against container outermost coordinate limits edges */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Forces wallpaper elements box sizes to stretch cleanly over full workspace width */
+    width: 100%;
+    /* Forces wallpaper elements box sizes to stretch cleanly over full workspace height */
+    height: 100%;
+    /* Pins target picture center coordinates right onto the absolute center of device views grid lines */
+    background-position: center;
+    /* Proportional scaling calculation: fills screen workspace completely without stretching graphics */
+    background-size: cover;
+    /* Prevents the graphics rendering system from tiling imagery files on oversized screens layouts */
+    background-repeat: no-repeat;
+    /* Keeps background layer textures stacked at level one underneath interactive foreground layers */
+    z-index: 1;
+}
+
+/* --- THE INTERACTIVE LIQUID REVEAL DRAWING CANVAS CANVAS --- */
+#fluid-canvas {
+    /* Pins layout boundaries exactly matching workspace container box perimeters coordinates */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
+    /* Places canvas elements at depth level two, immediately above static underlying backgrounds */
+    z-index: 2;
+    /* Connects drawing outputs directly into our dynamic hidden SVG liquid gooey blending engine filter */
+    filter: url('#liquid-glue');
+    /* Disables gesture capturing on canvas so pointer clicks pass straight down to structural interaction click handlers */
+    pointer-events: none;
 }
 
-/* EDIT IMAGE PATHS DOWN HERE: Change URLs inside parentheses to update your graphics links */
+/* --- INTERCHANGING MEMORY VIEWS GRAPHIC CONTROLLERS --- */
 
-/* LAYOUT REGISTER STATE ONE: Initial execution appearance */
+/* IMAGE 1 SETTINGS: Customize the URL path within parentheses to change your startup image asset link */
 .state-one .base-layer {
     background-image: url('https://i.pinimg.com/736x/19/d2/40/19d240f66e85c2f870f59dabc61f6413.jpg');
 }
-.state-one .spotlight-layer {
-    background-image: url('https://i.pinimg.com/736x/e5/00/9f/e5009fb73c81b51373a5c00202938635.jpg');
-    filter: url('#liquid-glue'); /* Connects to the SVG fluid processor markup */
-    clip-path: circle(calc(160px * var(--mask-scale)) at var(--mask-x) var(--mask-y));
-    transition: clip-path 0.08s linear; /* Smooth responsive track lagging styling */
-}
 
-/* LAYOUT REGISTER STATE TWO: Inverted interface transformation phase */
+/* IMAGE 2 SETTINGS: Customize the URL path within parentheses to change your alternative image asset link */
 .state-two .base-layer {
     background-image: url('https://i.pinimg.com/736x/e5/00/9f/e5009fb73c81b51373a5c00202938635.jpg');
 }
-.state-two .spotlight-layer {
-    background-image: url('https://i.pinimg.com/736x/19/d2/40/19d240f66e85c2f870f59dabc61f6413.jpg');
-    filter: url('#liquid-glue');
-    clip-path: circle(calc(160px * var(--mask-scale)) at var(--mask-x) var(--mask-y));
-    transition: clip-path 0.08s linear;
-}
 
-/* --- BACKGROUND DESIGN MARKER WORDING --- */
+/* --- GIANT WATERMARK TEXT --- */
 .bg-watermark {
+    /* Floating absolute positional mapping coordinates targeting lower left viewport quadrant quadrants */
     position: absolute;
     left: 5%;
     bottom: 12%;
+    /* Bold structural heading font preference assignment */
     font-family: 'Oswald', sans-serif;
+    /* Massive display typography scaling factor (Modify value below to grow or shrink background lettering size) */
     font-size: 7rem;
+    /* Enforces extra heavy font weights styling lines profiles */
     font-weight: 700;
+    /* Controls line-height tracking gaps when watermark values stack vertically */
     line-height: 1.1;
-    color: rgba(255, 255, 255, 0.25); /* Faint layout visual watermark */
+    /* Blends typography lines at 25% opacity visibility footprint behind overlay text blocks cards */
+    color: rgba(255, 255, 255, 0.25);
+    /* Prevents copy highlighting interactions from catching pointers vectors actions */
     pointer-events: none;
-    z-index: 2;
+    /* Intermediate layout layer depth index ordering rules positioning text nicely behind front text items */
+    z-index: 3;
 }
 
-/* --- MODIFIER SETTINGS FOR 'VIEW NORMALLY' SMARTPHONE VIEWPORT SETUPS --- */
+/* --- MOBILE SPECIFIC VIEW NORMALLY CONTAINER ADJUSTMENTS MODIFIER --- */
 .landing-container.mobile-normal-mode {
+    /* Caps max horizontal layout profile width on smartphones fields */
     width: 100vw;
-    height: 42vh; /* Locks layout to a clean horizontal letterbox panel centered vertically */
+    /* Squashes canvas display layout container down into a horizontal letterbox frame panel strip */
+    height: 42vh;
+    /* Clears rounding edge profiles to maximize horizontal border alignment visibility */
     border-radius: 0px;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+    /* Adds soft white shadowing backdrop outer glow depth across dead fallback screen areas */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
 }
 
-/* --- MASTER BRANDING TOP HEADERS --- */
+/* --- FIXED STATIONARY INTERFACE TOP BRANDS HEADERS --- */
 .top-header {
+    /* Fixes layout location floating up near top margin tracks */
     position: absolute;
     top: 5%;
+    /* Shifts origin horizontally to screen true half way centerlines guidelines */
     left: 50%;
+    /* Pulls element frame precisely back leftward by half its size width to center it */
     transform: translateX(-50%);
+    /* Aligns multiple internal character elements nicely centered inside text boxes frames */
     text-align: center;
+    /* Elevated layering depth code keeping branding titles safe from background image overlapping profiles */
     z-index: 5;
 }
 
 .main-title {
     font-family: 'Oswald', sans-serif;
+    /* Font size value parameter for primary header title line text labels */
     font-size: 2.8rem;
+    /* Spreads white space gaps tracking separations cleanly between adjacent letters */
     letter-spacing: 6px;
 }
 
 .sub-title {
+    /* Secondary text sizing metrics parameter configuration node */
     font-size: 0.85rem;
     letter-spacing: 4px;
+    /* Soft dim charcoal layout font coloring accent treatment code */
     color: #cccccc;
 }
 
-/* --- CHARACTER DATA ELEMENT (ONLY THING THAT BLURS BACKGROUND) --- */
+/* --- STANDALONE INTERFACE CONTENT LABELS (STRIPPED CLEAN OF ANY CONTAINERS TABLES AND BOXES) --- */
 .content-card {
+    /* Absolute tracking locations pinning typography labels near bottom-right workspace regions quadrants */
     position: absolute;
     bottom: 12%;
     right: 5%;
+    /* Caps the horizontal stretching limits so text blocks break into elegant paragraph lines formats */
     max-width: 420px;
-    padding: 30px;
-    border-radius: 12px;
+    /* Upper tier depth index priority value ensuring interactive elements always sit clear on top */
     z-index: 5;
-    
-    /* Removed background-colors: Complete transparency allows full wallpaper imagery view */
-    background: rgba(255, 255, 255, 0.01); 
-    
-    /* Restricts blur effects selectively inside card borders */
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Returns standard text parsing cursor behavior over description text paragraphs blocks copy */
+    cursor: default;
 }
 
 .faction-tag {
+    /* Scale dimensions applied over tiny category accent label lines copy tags */
     font-size: 0.7rem;
     letter-spacing: 1px;
+    /* Automatically translates lowercase data elements straight into all capital letters layout profiles */
     text-transform: uppercase;
-    color: #8ade8a; /* Pitch green highlights accent color */
+    /* Theme pitch field green font color highlight accent parameter */
+    color: #8ade8a;
+    /* Push margin clearing text bounds baseline away from header text lines elements underneath */
     margin-bottom: 8px;
+    /* Forces box rules to align margins properly while scaling with container blocks dimensions */
     display: inline-block;
 }
 
 .character-name {
     font-family: 'Oswald', sans-serif;
+    /* Size values assigned directly across primary descriptive text headlines targets */
     font-size: 2.8rem;
     line-height: 1.1;
     margin-bottom: 15px;
@@ -148,46 +192,61 @@ body {
 
 .character-desc {
     font-size: 0.85rem;
+    /* Controls spacing clearance tracks between stacked lines of text copies for readability */
     line-height: 1.6;
+    /* Frosted off-white font coloring tone reducing visibility strain on complex background images */
     color: #e0e0e0;
     margin-bottom: 20px;
 }
 
-/* --- LINK BUTTON LAYOUT RULES --- */
+/* --- INTERACTIVE ACTION LINK CTA NAV BUTTON STYLING --- */
 .cta-button {
+    /* Configures anchor links element block model tracking behaviors nicely */
     display: inline-block;
     font-family: 'Oswald', sans-serif;
+    /* Safety clearance pads buffer surrounding button inner typography boundaries text lines copy */
     padding: 12px 30px;
     font-size: 0.95rem;
     letter-spacing: 1px;
+    /* Sets button core body background shade value tracking to solid absolute white */
     background-color: #ffffff;
+    /* Rich solid dark color tone applied straight on button inner characters text fields */
     color: #000000;
+    /* Strips default browser underline accents links decoration markup away from anchor pointers tags */
     text-decoration: none;
+    /* Rounds button block profile corners slightly for structural balance */
     border-radius: 4px;
     font-weight: 700;
+    /* Smoothly transforms hover color variations evenly over a 0.3-second time arc window */
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
+    /* Swaps button background over to dynamic pitch green highlight accent values on mouse interaction */
     background-color: #8ade8a;
     color: #000000;
 }
 
-/* --- HANDLER DIALOG BOX LAYERS FOR SMARTPHONE LAYOUT SYSTEMS --- */
+/* --- SMARTPHONE DISPLAY STRATEGY CHOICES LAYERS OVERLAYS --- */
 .popup-overlay, .warning-overlay {
+    /* Locks modal configurations covering viewports interface bounds dynamically on top of screen fields */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    /* Dense solid charcoal-dark visual background mask blocking background visibility fields elements underneath */
     background: rgba(10, 10, 14, 0.98);
+    /* Absolute maximum layering priority value ensuring overlays stay uppermost above interface features code */
     z-index: 999;
+    /* Employs flexible alignment grid metrics to pin modal boxes directly in the dead screen center */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .warning-overlay {
+    /* Hidden by default, activated via orientation monitoring script when rotation adjustments are needed */
     display: none;
     background: #000000;
 }
@@ -237,24 +296,29 @@ body {
     color: black;
 }
 
+/* --- TILTING DEVICE PHONE CONTEXT ICON KEYFRAME MODULE ANIMATIONS --- */
 .phone-icon {
     font-size: 3rem;
     margin-bottom: 15px;
+    /* Attaches rotation timeline instructions path running looping continuously back and forth infinitely */
     animation: rotateFrame 2s infinite ease-in-out;
 }
 
+/* Definition path angles scaling structural shift transformations behavior rules over timeline arcs */
 @keyframes rotateFrame {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(-90deg); }
     100% { transform: rotate(0deg); }
 }
 
-/* --- TARGETED PHONE MEDIA DESIGN RULES --- */
+/* --- AUTOMATED MEDIA QUERY RESPONSIVENESS DESIGN CONSTRAINTS --- */
 @media (max-width: 768px) {
     .bg-watermark {
+        /* Reduces watermark layout size on mobile configurations to prevent composition crowding layout breaks */
         font-size: 4rem;
         bottom: 45%;
     }
+    /* Controls card element dimensional boundaries to fit center alignments properly over smaller displays spaces */
     .landing-container:not(.mobile-normal-mode) .content-card {
         max-width: 90%;
         right: 5%;
@@ -262,7 +326,7 @@ body {
     }
 }
 
-/* Bypasses choice prompts automatically on large desktop system displays */
+/* Large Display Strategy Filter Bypass: Automatically dismisses setup popup choices on laptop widescreen widths */
 @media (min-width: 1024px) {
     .popup-overlay {
         display: none !important;
